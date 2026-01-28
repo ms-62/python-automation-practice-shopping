@@ -1,0 +1,11 @@
+# 핵심 자동화 도구
+selenium>=4.10.0      # 최신 WebDriver Manager 기능 포함 버전
+
+# 테스트 프레임워크 및 리포팅
+pytest>=7.4.0         # 테스트 실행 및 단언(Assertion)
+pytest-xdist>=3.3.0   # 병렬 테스트 실행 (속도 향상)
+pytest-html>=3.2.0    # 테스트 결과 HTML 리포트 생성
+
+# 유틸리티
+python-dotenv>=1.0.0  # .env 파일에서 로그인 계정/URL 로드
+webdriver-manager>=4.0.0 # 브라우저 드라이버 자동 관리

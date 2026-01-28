@@ -1,0 +1,13 @@
+.venv
+.env
+
+__pycache__/
+.pytest_cache
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+._*
+__pycache__
+reports/
+__init__.py
