@@ -11,3 +11,4 @@ vite.config.ts.*
 __pycache__
 reports/
 __init__.py
+.vscode

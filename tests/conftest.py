@@ -72,6 +72,12 @@ def inventory_page(setup_driver):
     from pages.inventory_page import InventoryPage
     return InventoryPage(driver)
 
+@pytest.fixture
+def cart_page(setup_driver):
+    driver, wait = setup_driver
+    from pages.cart_page import CartPage
+    return CartPage(driver)
+
 #정상로그인 메서드
 @pytest.fixture()
 def login_user(login_page,setup_driver, base_url):
@@ -82,16 +88,16 @@ def login_user(login_page,setup_driver, base_url):
 
 #테스트 전에 장바구니 정리하는 픽스쳐
 @pytest.fixture()
-def cart_setup(login_user, base_url):
+def cart_setup(login_user):
     driver, wait = login_user
-    from pages.inventory_page import InventoryPage
-    inventory_page = InventoryPage(driver)
+    from pages.base_page import BasePage
+    base_page = BasePage(driver)
     
-    inventory_page.open_side_bar()
-    inventory_page.reset_app_state()
+    base_page.open_side_bar()
+    base_page.reset_app_state()
     
     yield
     
-    inventory_page.open_side_bar()
-    inventory_page.reset_app_state()
+    base_page.open_side_bar()
+    base_page.reset_app_state()
         

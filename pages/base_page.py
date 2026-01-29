@@ -11,6 +11,9 @@ import logging,os
 
 
 class BasePage():
+    HBG_BTN = (By.ID, "react-burger-menu-btn")
+    ART_RESET_BTN = (By.ID, "reset_sidebar_link")
+    
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
@@ -32,3 +35,13 @@ class BasePage():
     
     def visibility_chk(self,locator):
         return WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(locator))
+    
+    def invisibility_chk(self,locator):
+        return WebDriverWait(self.driver,10).until(EC.invisibility_of_element_located(locator))
+    
+    
+    def open_side_bar(self):
+        self.click(self.HBG_BTN)
+    
+    def reset_app_state(self):
+        self.click(self.ART_RESET_BTN)

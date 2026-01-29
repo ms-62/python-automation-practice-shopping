@@ -18,5 +18,8 @@ def test_item_add_and_check(inventory_page,login_user, item):
     
     assert inventory_page.item_add(item) is True, "TEST FAILED : EMPTY CART!!" 
     logger.info(f"[SUCCESS] ADD TO CART AND CHECK")
-def test_cart_remove_check():
-        
+    
+    assert inventory_page.item_detail(item) is True, "TEST FAILED : NOT MATCH ITEM!!"
+    logger.info(f"[SUCCESS] MOVE TO ITEM DETAIL PAGE")
+    
+    
